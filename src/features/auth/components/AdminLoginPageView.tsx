@@ -193,6 +193,13 @@ const AdminLoginPageView = () => {
                 )}
               </button>
             </div>
+            <div className="text-sm text-gray-600 w-full mx-auto">
+              <h4>Demo Admin details</h4>
+              <div>
+                <p>email: admin1@seatwell.test </p>
+                <p>pass: admin123</p>
+              </div>
+            </div>
           </form>
         </div>
       </div>

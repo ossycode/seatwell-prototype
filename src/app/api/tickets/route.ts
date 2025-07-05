@@ -2,13 +2,8 @@ import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/utils/supabase/server";
 import { generateCode } from "@/utils/helpers";
 
-export async function GET(
-  request: NextRequest,
-  { params }: { params: Promise<{ sellerId: string }> }
-) {
+export async function GET(request: NextRequest) {
   const supabase = await createClient();
-  const { sellerId } = await params;
-
   const url = new URL(request.url);
 
   const gameId = url.searchParams.get("gameId");
@@ -35,7 +30,6 @@ export async function GET(
     `,
       { count: "exact" }
     )
-    .eq("seller_id", sellerId)
     .order("created_at", { ascending: false })
     .range(from, to);
 

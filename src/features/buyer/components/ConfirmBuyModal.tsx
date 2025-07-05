@@ -53,11 +53,12 @@ export default function ConfirmBuyModal({
       return;
     }
 
-    if (!currentUser) return;
+    if (!currentUser || !ticketInfo.ticket_id) return;
+    console.log(currentUser?.id);
 
     try {
       await buyTicket({
-        ticketId: ticketInfo.id,
+        ticketId: ticketInfo.ticket_id,
         buyerId: currentUser?.id,
       }).unwrap();
 

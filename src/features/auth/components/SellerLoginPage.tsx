@@ -194,6 +194,14 @@ const SellerLoginPage = () => {
                 )}
               </button>
             </div>
+            <div className="text-sm text-gray-600 w-full mx-auto">
+              <h4>Demo Sellers details</h4>
+              <div>
+                <p>email: seller2@club.test, password: pass5678 </p>
+                <p>email: seller3@club.test password: pass3333</p>
+                <p> email: seller4@club.test, password: pass4444</p>
+              </div>
+            </div>
           </form>
         </div>
       </div>

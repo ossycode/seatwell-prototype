@@ -207,6 +207,14 @@ const BuyerLoginForm = () => {
                 </Link>
               </p>
             </div>
+
+            <div className="text-sm text-gray-600 w-full mx-auto mt-3">
+              <h4>Demo Sellers details</h4>
+              <div>
+                <p>email: buyer@example.com, password: password123 </p>
+                <p>email: buyer2@example.com password: password123</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

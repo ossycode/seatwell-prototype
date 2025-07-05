@@ -7,7 +7,7 @@ export async function POST(
 ) {
   const { ticketId } = await params;
   const supabase = await createClient();
-  const { buyer_id } = (await request.json()) as { buyer_id: string };
+  const { buyerId } = (await request.json()) as { buyerId: string };
 
   // 1) Mark ticket sold
   const { data: ticket, error: ticketErr } = await supabase
@@ -31,7 +31,7 @@ export async function POST(
   const { data: buyer, error: buyerErr } = await supabase
     .from("users")
     .select("id, email")
-    .eq("id", buyer_id)
+    .eq("id", buyerId)
     .single();
   if (buyerErr || !buyer) {
     return NextResponse.json(

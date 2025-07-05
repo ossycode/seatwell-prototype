@@ -56,7 +56,7 @@ export default async function middleware(request: NextRequest) {
       .eq("id", user.id)
       .single();
 
-    if (profile?.role !== "seller" && profile?.role !== "admin") {
+    if (profile?.role !== "seller") {
       const url = request.nextUrl.clone();
       // url.pathname = "/seller/no-ticket";
       url.pathname = "/auth/seller-login";

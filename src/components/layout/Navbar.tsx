@@ -10,6 +10,7 @@ import { inter } from "@/utils/fonts";
 import { createClient } from "@/utils/supabase/client";
 import { UserResponse } from "@supabase/supabase-js";
 import SignOutButton from "../SignoutButton";
+import { Routes } from "@/routes";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -74,6 +75,11 @@ const Navbar = () => {
           );
         })}
         {currentUser?.data.user && <SignOutButton />}
+        {!currentUser?.data.user && (
+          <CustomLink href={Routes.ADMIN_LOGIN.path} className="text-sm">
+            Admin Login
+          </CustomLink>
+        )}
       </ul>
       <div className="lg:hidden z-50 relative">
         <button onClick={toggleMenu} className="flex gap-1 items-center">
